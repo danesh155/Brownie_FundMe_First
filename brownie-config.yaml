@@ -1,0 +1,34 @@
+dependencies:
+  # <organization/repo>@<version>
+  smartcontractkit/chainlink-brownie-contracts@1.1.1
+  
+compiler:
+  solc:
+    remappings:
+      '@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1'
+
+dotenv: .env
+networks:
+  default: development
+  kovan:
+    ethusd_priceFeed: "0x9326BFA02ADD2366b30bacB125260Af641031331"
+    verify: True
+  mainnet-fork-dev:
+    ethusd_priceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    verify: False
+  mainnet-fork:
+    ethusd_priceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    verify: False
+  rinkeby:
+    ethusd_priceFeed: "0x78F9e60608bF48a1155b4B2A5e31F32318a1d85F"
+    verify: True
+  mainnet:
+    ethusd_priceFeed: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+    verify: True
+  ganache-local:
+    verify: False
+  development:
+    verify: False
+
+wallets:
+  from_key: ${private_key}
